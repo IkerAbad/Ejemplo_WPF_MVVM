@@ -1,0 +1,41 @@
+﻿<Page x:Class="ProyectoWPF.View.ListaArticulosPagina"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProyectoWPF.View"
+      xmlns:vm="clr-namespace:ProyectoWPF.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ListaArticulosPagina">
+
+    <Page.Resources>
+        <vm:ArticleViewModel x:Key="ArticuloVM"/>
+    </Page.Resources>
+
+    <Grid Background="#FF979797" DataContext="{StaticResource ArticuloVM}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="81*"/>
+            <RowDefinition Height="255*"/>
+            <RowDefinition Height="83*"/>
+        </Grid.RowDefinitions>
+        <Button Click="Inicio" Content="Inicio" HorizontalAlignment="Left" Height="83" Margin="10,10,0,0" VerticalAlignment="Top" Width="102" Background="#FF979797" BorderThickness="0" FontSize="26" Grid.RowSpan="2"/>
+        <TextBlock  TextBlock.Foreground="Azure" HorizontalAlignment="Left" Height="41" Margin="112,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" FontSize="26"><Run Text="&gt; "/><Run Text=" "/><Run Text="Articulos"/></TextBlock>
+        <Button Content="Añadir" HorizontalAlignment="Left" Height="74" Margin="288,14,0,0" VerticalAlignment="Top" Width="165" FontSize="24" Background="	#191970" BorderThickness="0" Grid.RowSpan="2" Click="Añadir"/>
+        <ListView Background="White" Name="ArticleGrid" Grid.Row="1" Margin="5,15,5,0" ItemsSource="{Binding Articles}"  >
+            <ListView.View>
+                <GridView x:Name="grdTest">
+                    <GridViewColumn Header="CodigoArticulo" DisplayMemberBinding="{Binding CodigoArticulo}" Width="120"/>
+                    <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding Nombre}"  Width="120" />
+                    <GridViewColumn Header="Descripcion" DisplayMemberBinding="{Binding Descripcion}" Width="280" />
+                    <GridViewColumn Header="PCoste" DisplayMemberBinding="{Binding PCoste}" Width="70" />
+                    <GridViewColumn Header="IVA" DisplayMemberBinding="{Binding IVA}" Width="60" />
+                    <GridViewColumn Header="PVenta" DisplayMemberBinding="{Binding PVenta}" Width="100" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Ver" HorizontalAlignment="Left" Height="74" Margin="301,5,0,0" VerticalAlignment="Top" Width="165" FontSize="24" Background="#3B83BD" BorderThickness="0" Click="Ver" Grid.Row="2"/>
+        <Button Click="Editar" Content="Editar" HorizontalAlignment="Left" Height="74" Margin="78,5,0,0" VerticalAlignment="Top" Width="165" FontSize="24" Background="#006400" BorderThickness="0" Grid.Row="2"/>
+        <Button Click="Borrar" Content="Eliminar" HorizontalAlignment="Left" Height="74" Margin="521,5,0,0" VerticalAlignment="Top" Width="165" FontSize="24" Background="#FF0000" BorderThickness="0" Grid.Row="2"/>
+    </Grid>
+</Page>

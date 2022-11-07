@@ -1,0 +1,27 @@
+﻿<Page x:Class="ProyectoWPF.View.VentasInformacionPagina"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProyectoWPF.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="VentasInformacionPagina">
+
+    <Grid Background="#FF979797">
+        <Label Content="Código:" HorizontalAlignment="Left" Height="36" Margin="72,138,0,0" VerticalAlignment="Top" Width="81" FontSize="20" FontWeight="Bold" FontFamily="Bell MT"/>
+        <Label Content="Importe:" HorizontalAlignment="Left" Height="32" Margin="512,144,0,0" VerticalAlignment="Top" Width="87" FontSize="20" FontFamily="Bell MT" FontWeight="Bold"/>
+        <Label Content="Forma de Pago:" HorizontalAlignment="Left" Height="38" Margin="448,196,0,0" VerticalAlignment="Top" Width="151" FontSize="20" FontFamily="Bell MT" FontWeight="Bold"/>
+        <Button Content="Ver Dependiente" HorizontalAlignment="Left" Height="86" Margin="512,323,0,0" VerticalAlignment="Top" Width="270" Background="#FF339CC4" FontSize="30" BorderThickness="0"/>
+        <Label TextBlock.Foreground="DarkRed" Content="Nº Tarjeta:" HorizontalAlignment="Left" Height="39" Margin="489,256,0,0" VerticalAlignment="Top" Width="110" FontSize="20" FontFamily="Bell MT" FontWeight="Bold"/>
+        <Button Click="Ventas" Content="Ventas" HorizontalAlignment="Left" Height="73.748" Margin="10,10.342,0,0" VerticalAlignment="Top" Width="126" Background="#FF979797" FontSize="30" BorderThickness="0"/>
+        <TextBlock  TextBlock.Foreground="Azure" HorizontalAlignment="Left" Height="46" Margin="136,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="281" FontSize="36"><Run Text="&gt;"/><Run Text=" "/><Run FontSize="40" Text=" "/><Run FontSize="40" Text="Información"/><Run Text=" "/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="604,144,0,0" TextWrapping="Wrap" Text="{Binding Importe}" VerticalAlignment="Top" Width="163" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="604,196,0,0" TextWrapping="Wrap" Text="{Binding FormaPago}" VerticalAlignment="Top" Width="163" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="604,256,0,0" TextWrapping="Wrap" Text="{Binding NTarjeta}" VerticalAlignment="Top" Width="163" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="158,138,0,0" TextWrapping="Wrap" Text="{Binding Codigo}" VerticalAlignment="Top" Width="230" FontSize="20"/>
+        <Label Content="Fecha Venta:" HorizontalAlignment="Left" Height="27" Margin="32,234,0,0" VerticalAlignment="Top" Width="126" FontSize="20" FontWeight="Bold" FontFamily="Bell MT"/>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="158,234,0,0" TextWrapping="Wrap" Text="{Binding Fecha}" VerticalAlignment="Top" Width="230" FontSize="20"/>
+
+    </Grid>
+</Page>
